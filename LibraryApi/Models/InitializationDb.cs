@@ -22,9 +22,9 @@ namespace LibraryApi.Models
             if (!context.Books.Any())
             {
                 context.Books.AddRange(
-                    new Book { Name = "", BookGenreId = 1, Author = "", Available = true },
-                    new Book { Name = "", BookGenreId = 2, Author = "", Available = true },
-                    new Book { Name = "", BookGenreId = 3, Author = "", Available = true }
+                    new Book { Name = "Марсианин", BookGenreId = 1, Author = "Энди Вейер", Available = true },
+                    new Book { Name = "Ведьмак", BookGenreId = 2, Author = "Анжей Сапковский", Available = true },
+                    new Book { Name = "Шерлок Холмс", BookGenreId = 3, Author = "Артур Конан Дойл", Available = true }
                 );
                 context.SaveChanges();
             }
