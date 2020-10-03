@@ -26,7 +26,10 @@ namespace LibraryApi
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<LibraryContext>(options => options.UseSqlServer(connection));
 
+            services.AddTransient<ILibraryRepository, EFLibraryRepository>();
+
             services.AddControllers();
+            services.AddMvc();
         }
 
         
