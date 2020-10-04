@@ -7,10 +7,10 @@ namespace LibraryApi.Models
 {
     public interface ILibraryRepository
     {
-        IEnumerable<Book> Get();
-        Book Get(int id);
-        void Create(Book book);
-        void Update(Book book);
-        void Delete(int id);
+        IEnumerable<Book> GetBooks();
+        Book GetBookId(int id);
+        void CreateBook(Book book);
+        void UpdateBook(Book book);
+        void DeleteBook(int id);
     }
 }

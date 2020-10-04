@@ -13,19 +13,19 @@ namespace LibraryApi.Models
             this.context = context;
         }
 
-        public IEnumerable<Book> Get()
+        public IEnumerable<Book> GetBooks()
         {
             return context.Books;
         }
 
-        public Book Get(int id)
+        public Book GetBookId(int id)
         {
             return context.Books.Find(id);
         }
 
-        public void Update(Book book)
+        public void UpdateBook(Book book)
         {
-            var currentbook = Get(book.Id);
+            var currentbook = GetBookId(book.Id);
             currentbook.Name = book.Name;
             currentbook.BookGenreId = book.BookGenreId;
             currentbook.Author = book.Author;
@@ -36,15 +36,15 @@ namespace LibraryApi.Models
 
         }
 
-        public void Create(Book book)
+        public void CreateBook(Book book)
         {
             context.Books.Add(book);
             context.SaveChanges();
         }
 
-        public void Delete(int id)
+        public void DeleteBook(int id)
         {
-            var book = Get(id);
+            var book = GetBookId(id);
             if (book != null)
             {
                 context.Books.Remove(book);
